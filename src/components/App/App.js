@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
 import Welcome from '../Welcome/Welcome';
+import CreatureForm from '../CreatureForm/CreatureForm';
 
 class App extends React.Component {
   state = {
@@ -20,26 +21,26 @@ class App extends React.Component {
     ],
   };
 
-  handleClickAdd = (event) => {
-    this.setState({
-      creatures: [
-        ...this.state.creatures,
-        {
-          ...this.state.form,
-        },
-      ],
-    });
-  };
+  // handleClickAdd = (event) => {
+  //   this.setState({
+  //     creatures: [
+  //       ...this.state.creatures,
+  //       {
+  //         ...this.state.form,
+  //       },
+  //     ],
+  //   });
+  // };
 
-  handleChangeField = (event, fieldKey) => {
-    this.setState({
-      // enteredCreature: event.target.value,
-      form: {
-        ...this.state.form,
-        [fieldKey]: event.target.value,
-      },
-    });
-  };
+  // handleChangeField = (event, fieldKey) => {
+  //   this.setState({
+  //     // enteredCreature: event.target.value,
+  //     form: {
+  //       ...this.state.form,
+  //       [fieldKey]: event.target.value,
+  //     },
+  //   });
+  // };
 
   render() {
     // map method
@@ -57,21 +58,7 @@ class App extends React.Component {
         <main className="container">
           <Welcome />
           {/* CODE COMMENT */}
-          <div>
-            <input
-              type="text"
-              placeholder="Creature Name"
-              name="creature"
-              onChange={(event) => this.handleChangeField(event, 'name')}
-            />
-            <input
-              type="text"
-              placeholder="Creature Origin"
-              name="origin"
-              onChange={(event) => this.handleChangeField(event, 'origin')}
-            />
-            <button onClick={this.handleClickAdd}>Add</button>
-          </div>
+          <CreatureForm />
           <ul>{listElements}</ul>
         </main>
       </div>
