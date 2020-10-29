@@ -20,7 +20,13 @@ class CreatureForm extends Component {
 
   handleClickAdd = (event) => {
     console.log('handleClickAdd');
-    this.props.creatureCallback(this.state.form);
+    this.props.creatureCallback(this.state.form); // { name: 'abc', origin; 'xyz' }
+    this.setState({
+      form: {
+        name: '',
+        origin: '',
+      },
+    });
   };
 
   render() {
@@ -31,12 +37,14 @@ class CreatureForm extends Component {
           placeholder="Creature Name"
           name="creature"
           onChange={(event) => this.handleChangeField(event, 'name')}
+          value={this.state.form.name}
         />
         <input
           type="text"
           placeholder="Creature Origin"
           name="origin"
           onChange={(event) => this.handleChangeField(event, 'origin')}
+          value={this.state.form.origin}
         />
         <button onClick={this.handleClickAdd}>Add</button>
       </div>

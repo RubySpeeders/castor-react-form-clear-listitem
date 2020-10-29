@@ -60,7 +60,7 @@ class App extends React.Component {
         <main className="container">
           <Welcome />
           {/* CODE COMMENT */}
-          <CreatureForm creatureCallback={this.addNewCreature} />
+          <CreatureForm creatureCallback={this.addNewCreature}/>
           <CreatureList creatures={this.state.creatures} />
         </main>
       </div>
