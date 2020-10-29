@@ -6,13 +6,6 @@ class CreatureForm extends Component {
       name: '',
       origin: '',
     },
-    creatures: [
-      { name: 'Unicorn', origin: ' Europe' },
-      { name: 'Sphinx', origin: 'Persia' },
-      { name: 'Kappa', origin: 'Japan' },
-      { name: 'Dryad', origin: 'Greece' },
-      { name: 'Jackalope', origin: 'Kansas' },
-    ],
   };
 
   handleChangeField = (event, fieldKey) => {
@@ -26,14 +19,8 @@ class CreatureForm extends Component {
   };
 
   handleClickAdd = (event) => {
-    this.setState({
-      creatures: [
-        ...this.state.creatures,
-        {
-          ...this.state.form,
-        },
-      ],
-    });
+    console.log('handleClickAdd');
+    this.props.creatureCallback(this.state.form);
   };
 
   render() {

@@ -7,12 +7,10 @@ import CreatureList from '../CreatureList/CreatureList';
 
 class App extends React.Component {
   state = {
-    // enteredCreature: '',
-    // enteredOrigin: '',
-    form: {
-      name: '',
-      origin: '',
-    },
+    // form: {
+    //   name: '',
+    //   origin: '',
+    // },
     creatures: [
       { name: 'Unicorn', origin: ' Europe' },
       { name: 'Sphinx', origin: 'Persia' },
@@ -43,6 +41,18 @@ class App extends React.Component {
   //   });
   // };
 
+  addNewCreature = (newCreature) => {
+    console.log('addNewCreature');
+    this.setState({
+      creatures: [
+        ...this.state.creatures,
+        {
+          ...newCreature,
+        },
+      ],
+    });
+  };
+
   render() {
     return (
       <div>
@@ -50,8 +60,8 @@ class App extends React.Component {
         <main className="container">
           <Welcome />
           {/* CODE COMMENT */}
-          <CreatureForm />
-          <CreatureList />
+          <CreatureForm creatureCallback={this.addNewCreature} />
+          <CreatureList creatures={this.state.creatures} />
         </main>
       </div>
     );
