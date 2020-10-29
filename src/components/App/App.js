@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
+import Welcome from '../Welcome/Welcome';
 
 class App extends React.Component {
   state = {
@@ -54,7 +55,7 @@ class App extends React.Component {
       <div>
         <Header />
         <main className="container">
-          <p>Welcome to Lists in react</p>
+          <Welcome />
           {/* CODE COMMENT */}
           <div>
             <input
