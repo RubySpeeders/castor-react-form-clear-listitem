@@ -3,6 +3,7 @@ import './App.css';
 import Header from '../Header/Header';
 import Welcome from '../Welcome/Welcome';
 import CreatureForm from '../CreatureForm/CreatureForm';
+import CreatureList from '../CreatureList/CreatureList';
 
 class App extends React.Component {
   state = {
@@ -43,15 +44,6 @@ class App extends React.Component {
   // };
 
   render() {
-    // map method
-    const listElements = this.state.creatures.map(function (item, index) {
-      return (
-        <li key={index}>
-          {item.name} is originating from {item.origin}
-        </li>
-      );
-    });
-
     return (
       <div>
         <Header />
@@ -59,7 +51,7 @@ class App extends React.Component {
           <Welcome />
           {/* CODE COMMENT */}
           <CreatureForm />
-          <ul>{listElements}</ul>
+          <CreatureList />
         </main>
       </div>
     );
