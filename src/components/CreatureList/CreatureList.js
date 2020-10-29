@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CreatureForm from '../CreatureForm/CreatureForm';
 
 class CreatureList extends Component {
   render() {
